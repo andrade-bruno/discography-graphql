@@ -9,6 +9,10 @@ class ArtistsAPI extends RESTDataSource {
 	async getArtists() {
 		return this.get('/artists')
 	}
+
+	async getArtistById(id) {
+		return this.get(`/artists/${id}`)
+	}
 }
 
 module.exports = ArtistsAPI

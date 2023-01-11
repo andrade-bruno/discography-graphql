@@ -1,6 +1,7 @@
 const artistResolver = {
 	Query: {
-		artists: (root, args, { dataSources }, info) => dataSources.artistsAPI.getArtists()
+		artists: (root, args, { dataSources }, info) => dataSources.artistsAPI.getArtists(),
+		artist: (root, args, { dataSources }, info) => dataSources.artistsAPI.getArtistById(args.id)
 	}
 }
 
