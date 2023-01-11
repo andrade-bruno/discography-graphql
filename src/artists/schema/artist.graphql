@@ -1,0 +1,18 @@
+const { gql } = require('apollo-server')
+
+const ArtistSchema = gql `
+	type Artist {
+		title: String!
+		formedDate: String
+		mainGenre: String!
+		avatar: String
+		bio: String
+	}
+
+	type Query {
+		artists: [Artist]
+		firstArtist: Artist
+	}
+`
+
+module.exports = ArtistSchema

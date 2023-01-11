@@ -1,39 +1,16 @@
-import express from 'express'
-import { ApolloServer, gql } from 'apollo-server-express'
-import cors from 'cors'
-import dotenv from 'dotenv'
-dotenv.config()
+const dotenv = require('dotenv').config()
+const { ApolloServer } = require('apollo-server')
+const ArtistSchema = require('./artists/schema/artist.graphql')
+const ArtistResolver = require('./artists/resolvers/artistsResolver.js')
 
-const port = process.env.PORT
+const port = process.env.PORT || 8000
 
-const schema = gql(`
-	type Query {
-		main: String!
-	}
-`)
+const typeDefs = [ArtistSchema]
+const resolvers = [ArtistResolver]
 
-const resolver = {
-	Query: {
-		main: () => 'Discography API with GraphQL'
-	}
-}
+const server = new ApolloServer({ typeDefs, resolvers })
 
-const server = new ApolloServer({
-	typeDefs: schema,
-	resolvers: resolver
-})
-
-const app = express()
-server.start().then(
-	() => server.applyMiddleware({ app })
-).catch(err => console.info(err))
-
-app.use(cors({
-	origin: '*',
-	methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
-}));
-
-app.listen({ port }, () => {
+server.listen({ port }).then(() => {
 	console.info(`\nServer is running`)
 	console.info(`http://localhost:${port}${server.graphqlPath}`)
 })
