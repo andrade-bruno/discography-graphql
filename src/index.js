@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config()
+require('dotenv').config()
 const { ApolloServer } = require('apollo-server')
 const ArtistSchema = require('./artists/schema/artist.graphql')
 const ArtistResolver = require('./artists/resolvers/artistsResolver.js')
