@@ -26,8 +26,7 @@
 		"apollo-server": "^3.11.1",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
-		"graphql": "^16.6.0",
-		"graphql-tools": "^8.3.14"
+		"graphql": "^16.6.0"
 	},
 	"devDependencies": {
 		"json-server": "^0.16.1",

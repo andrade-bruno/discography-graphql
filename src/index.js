@@ -1,6 +1,5 @@
 require('dotenv').config()
 const { ApolloServer } = require('apollo-server')
-const { mergeTypeDefs } = require('graphql-tools')
 
 const ArtistSchema = require('./schemas/artist.graphql')
 const DiscoSchema = require('./schemas/disco.graphql')
@@ -11,7 +10,7 @@ const DiscosAPI = require('./datasources/discos')
 
 const port = process.env.PORT || 8000
 const resolvers = [ArtistResolver]
-const typeDefs = mergeTypeDefs([ArtistSchema])
+const typeDefs = [ArtistSchema]
 
 const server = new ApolloServer({
 	typeDefs,
