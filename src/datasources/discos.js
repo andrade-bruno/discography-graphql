@@ -7,11 +7,17 @@ class DiscosAPI extends RESTDataSource {
 	}
 
 	async getDiscos() {
-		return this.get('/discos')
+		const discos = await this.get('/discos')
+		return discos.map(async disco => ({
+			...disco,
+			artist: await this.get(`/artists/${disco.artistId}`)
+		}))
 	}
 
 	async getDiscoById(id) {
-		return this.get(`/discos/${id}`)
+		const disco = await this.get(`/discos/${id}`)
+		disco.artist = await this.get(`/artists/${disco.artistId}`)
+		return disco
 	}
 }
 

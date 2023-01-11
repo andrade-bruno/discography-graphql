@@ -3,7 +3,7 @@ const { gql } = require('apollo-server')
 const DiscosSchema = gql`
 	type Disco {
 		id: ID!
-		artistId: ID!
+		artist: Artist!
 		title: String!
 		releaseDate: String!
 		avatar: String
@@ -11,6 +11,15 @@ const DiscosSchema = gql`
 		genres: [String]
 		type: String!
 		contributors: [String]
+	}
+
+	type Artist {
+		id: ID!
+		title: String!
+		formedDate: String
+		mainGenre: String!
+		avatar: String
+		bio: String
 	}
 
 	type Query {
