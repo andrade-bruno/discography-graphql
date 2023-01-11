@@ -1,60 +1,34 @@
 {
-	"users": [
+	"artists": [
 		{
 			"id": 2,
-			"name": "Ana Torre",
-			"active": true,
-			"email": "a@a.com",
-			"role": 1
+			"title": "Ana Torre",
+			"mainGenre": "Rock"
 		},
 		{
 			"id": 2,
-			"name": "Gabriel Costa",
-			"active": true,
-			"email": "g@g.com",
-			"role": 1
+			"title": "Gabriel Costa",
+			"mainGenre": "Rock"
 		},
 		{
 			"id": 3,
-			"name": "Flavia Lins",
-			"active": true,
-			"email": "f@f.com",
-			"role": 1
+			"title": "Flavia Lins",
+			"mainGenre": "Rock"
 		},
 		{
 			"id": 4,
-			"name": "Carlos Marques",
-			"active": true,
-			"email": "c@c.com",
-			"role": 2
+			"title": "Carlos Marques",
+			"mainGenre": "Rock"
 		},
 		{
 			"id": 5,
-			"name": "Silvia Souza",
-			"active": true,
-			"email": "s@s.com",
-			"role": 2
+			"title": "Silvia Souza",
+			"mainGenre": "Rock"
 		},
 		{
 			"id": 6,
-			"name": "Marcia Silva",
-			"active": true,
-			"email": "m@m.com",
-			"role": 2
-		}
-	],
-	"roles": [
-		{
-			"id": 1,
-			"type": "STUDANT"
-		},
-		{
-			"id": 2,
-			"type": "TEACHER"
-		},
-		{
-			"id": 3,
-			"type": "MANAGER"
+			"title": "Marcia Silva",
+			"mainGenre": "Rock"
 		}
 	]
 }

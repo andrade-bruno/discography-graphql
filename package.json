@@ -7,7 +7,8 @@
 		"build": "npx tsc",
 		"prestart": "npm run build",
 		"start": "nodemon dist/index.js",
-		"dev": "nodemon -e js,json,graphql src/index.js"
+		"dev": "nodemon -e js,json,graphql src/index.js",
+		"json-server": "npx json-server --watch src/data.json"
 	},
 	"repository": {
 		"type": "git",
@@ -21,6 +22,7 @@
 	},
 	"homepage": "https://github.com/andrade-bruno/discography-graphql#readme",
 	"dependencies": {
+		"apollo-datasource-rest": "^3.7.0",
 		"apollo-server": "^3.11.1",
 		"concurrently": "^7.6.0",
 		"cors": "^2.8.5",

@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server')
 
-const ArtistSchema = gql `
+const ArtistSchema = gql`
 	type Artist {
 		title: String!
 		formedDate: String
@@ -11,7 +11,6 @@ const ArtistSchema = gql `
 
 	type Query {
 		artists: [Artist]
-		firstArtist: Artist
 	}
 `
 
