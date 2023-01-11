@@ -30,5 +30,21 @@
 			"title": "Marcia Silva",
 			"mainGenre": "Rock"
 		}
+	],
+	"discos": [
+		{
+			"id": 1,
+			"title": "Dark Side of the Moon",
+			"releaseDate": "1971-09-21",
+			"avatar": null,
+			"recorder": "Apple Records",
+			"genres": [
+				"Rock",
+				"Psycholdelic Rock"
+			],
+			"type": "Album",
+			"artistId": 1,
+			"contribuitors": "Pink Floyd"
+		}
 	]
 }

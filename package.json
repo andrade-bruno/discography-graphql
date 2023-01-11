@@ -8,7 +8,7 @@
 		"prestart": "npm run build",
 		"start": "nodemon dist/index.js",
 		"dev": "nodemon -e js,json,graphql src/index.js",
-		"json-server": "npx json-server --watch src/data.json"
+		"json-server": "npx json-server --watch src/data/data.json"
 	},
 	"repository": {
 		"type": "git",
