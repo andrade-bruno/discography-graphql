@@ -14,8 +14,8 @@ const DiscosSchema = gql`
 	}
 
 	type Query {
-		artists: [Disco]
-		artist(id: ID!): Disco 
+		discos: [Disco]
+		disco(id: ID!): Disco 
 	}
 `
 

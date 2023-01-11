@@ -9,15 +9,16 @@ const ArtistsAPI = require('./datasources/artists')
 const DiscosAPI = require('./datasources/discos')
 
 const port = process.env.PORT || 8000
-const resolvers = [ArtistResolver]
-const typeDefs = [ArtistSchema]
+const resolvers = [ArtistResolver, DiscoResolver]
+const typeDefs = [ArtistSchema, DiscoSchema]
 
 const server = new ApolloServer({
 	typeDefs,
 	resolvers,
 	dataSources: () => {
 		return {
-			artistsAPI: new ArtistsAPI()
+			artistsAPI: new ArtistsAPI(),
+			discosAPI: new DiscosAPI()
 		}
 	}
 })
