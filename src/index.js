@@ -1,8 +1,9 @@
 require('dotenv').config()
 const { ApolloServer } = require('apollo-server')
-const ArtistSchema = require('./artists/schema/artist.graphql')
-const ArtistResolver = require('./artists/resolvers/artistsResolver.js')
-const ArtistsAPI = require('./artists/datasource/artist')
+
+const ArtistSchema = require('./schemas/artist.graphql')
+const ArtistResolver = require('./resolvers/artistsResolver.js')
+const ArtistsAPI = require('./datasources/artist')
 
 const port = process.env.PORT || 8000
 

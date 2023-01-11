@@ -2,6 +2,7 @@ const { gql } = require('apollo-server')
 
 const ArtistSchema = gql`
 	type Artist {
+		id: ID!
 		title: String!
 		formedDate: String
 		mainGenre: String!
