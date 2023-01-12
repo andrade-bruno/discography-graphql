@@ -12,6 +12,14 @@ const ArtistSchema = gql`
 		bio: String
 	}
 
+	input ArtistInput {
+		title: String
+		formedDate: DateTime
+		mainGenre: GenresEnum
+		avatar: String
+		bio: String
+	}
+
 	type Query {
 		artists: [Artist]
 		artist(id: ID!): Artist 
