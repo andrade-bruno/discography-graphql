@@ -32,7 +32,7 @@ const ArtistSchema = gql`
 			mainGenre: GenresEnum!,
 			avatar: String,
 			bio: String
-		): Artist!
+		): defaultResponse!
 		updateArtist(
 			id: ID!,
 			title: String!,
@@ -40,8 +40,19 @@ const ArtistSchema = gql`
 			mainGenre: GenresEnum!,
 			avatar: String,
 			bio: String
-		): Artist!
-		deleteArtist(id: ID!): Artist!
+		): defaultResponse!
+		deleteArtist(id: ID!): defaultResponse!
+	}
+
+	interface Response {
+		code: Int!
+		message: String!
+	}
+
+	type defaultResponse implements Response {
+		code: Int!
+		message: String!
+		artist: Artist!
 	}
 `
 

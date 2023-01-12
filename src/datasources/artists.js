@@ -4,6 +4,10 @@ class ArtistsAPI extends RESTDataSource {
 	constructor() {
 		super()
 		this.baseURL = 'http://localhost:3000'
+		this.Response = {
+			code: 200,
+			message: 'Success'
+		}
 	}
 
 	async getArtists() {
@@ -20,20 +24,21 @@ class ArtistsAPI extends RESTDataSource {
 		artist.id = orderedByIdDescending[0].id + 1
 
 		await this.post('/artists', artist)
-		return artist
+		return ({ ...this.Response, artist: artist })
 	}
 
 	async updateArtist(newData) {
 		const { id } = newData
 		await this.put(`/artists/${id}`, newData)
-		return await this.get(`/artists/${id}`)
+		const updated = await this.get(`/artists/${id}`)
+		return ({ ...this.Response, artist: updated })
 	}
 
 	async deleteArtist(args) {
 		const { id } = args
 		const artist = await this.get(`/artists/${id}`)
 		await this.delete(`/artists/${id}`)
-		return artist
+		return ({ ...this.Response, artist: artist })
 	}
 }
 
