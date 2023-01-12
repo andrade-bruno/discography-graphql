@@ -21,12 +21,15 @@
       "mainGenre": "Classic Rock"
     },
     {
-      "title": "Holin' Wolf",
-      "formedDate": "1935-06-01",
-      "mainGenre": "Blues",
-      "avatar": "",
-      "bio": null,
-      "id": 7
+      "id": 7,
+      "title": "Howlin' Wolf",
+      "mainGenre": "Blues"
+    },
+    {
+      "title": "Muddy Waters",
+      "formedDate": "1938-04-22T00:00:00.000Z",
+      "mainGenre": "BLues",
+      "id": 8
     }
   ],
   "discos": [

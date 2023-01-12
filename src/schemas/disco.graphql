@@ -5,7 +5,7 @@ const DiscosSchema = gql`
 		id: ID!
 		artist: Artist!
 		title: String!
-		releaseDate: String!
+		releaseDate: DateTime!
 		avatar: String
 		recorder: String!
 		genres: [String]
@@ -16,7 +16,7 @@ const DiscosSchema = gql`
 	type Artist {
 		id: ID!
 		title: String!
-		formedDate: String
+		formedDate: DateTime
 		mainGenre: String!
 		avatar: String
 		bio: String

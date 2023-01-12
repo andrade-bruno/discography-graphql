@@ -16,7 +16,8 @@ class ArtistsAPI extends RESTDataSource {
 
 	async addArtist(artist) {
 		const artists = await this.get('/artists')
-		artist.id = artists.length + 1
+		const orderedByIdDescending = artists.sort((a, b) => b.id - a.id)
+		artist.id = orderedByIdDescending[0].id + 1
 
 		await this.post('/artists', artist)
 		return artist
