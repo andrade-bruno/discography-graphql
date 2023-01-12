@@ -7,7 +7,7 @@ const ArtistSchema = gql`
 		id: ID!
 		title: String!
 		formedDate: DateTime
-		mainGenre: String!
+		mainGenre: GenresEnum!
 		avatar: String
 		bio: String
 	}
@@ -21,7 +21,7 @@ const ArtistSchema = gql`
 		addArtist(
 			title: String!,
 			formedDate: DateTime,
-			mainGenre: String!,
+			mainGenre: GenresEnum!,
 			avatar: String,
 			bio: String
 		): Artist!
@@ -29,7 +29,7 @@ const ArtistSchema = gql`
 			id: ID!,
 			title: String!,
 			formedDate: DateTime,
-			mainGenre: String!,
+			mainGenre: GenresEnum!,
 			avatar: String,
 			bio: String
 		): Artist!

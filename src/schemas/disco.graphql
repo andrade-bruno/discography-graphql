@@ -8,18 +8,9 @@ const DiscosSchema = gql`
 		releaseDate: DateTime!
 		avatar: String
 		recorder: String!
-		genres: [String]
+		genres: [GenresEnum]
 		type: String!
 		contributors: [String]
-	}
-
-	type Artist {
-		id: ID!
-		title: String!
-		formedDate: DateTime
-		mainGenre: String!
-		avatar: String
-		bio: String
 	}
 
 	type Query {

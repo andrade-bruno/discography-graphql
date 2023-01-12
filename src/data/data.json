@@ -3,33 +3,39 @@
     {
       "id": 1,
       "title": "Pink Floyd",
-      "mainGenre": "Rock"
+      "mainGenre": "ROCK"
     },
     {
       "id": 2,
       "title": "Muddy Waters",
-      "mainGenre": "Blues"
+      "mainGenre": "BLUES"
     },
     {
       "id": 3,
       "title": "BB King",
-      "mainGenre": "Jazz"
+      "mainGenre": "JAZZ"
     },
     {
       "id": 6,
       "title": "Mick",
-      "mainGenre": "Classic Rock"
+      "mainGenre": "ROCK"
     },
     {
       "id": 7,
       "title": "Howlin' Wolf",
-      "mainGenre": "Blues"
+      "mainGenre": "BLUES"
     },
     {
       "title": "Muddy Waters",
       "formedDate": "1938-04-22T00:00:00.000Z",
-      "mainGenre": "BLues",
+      "mainGenre": "BLUES",
       "id": 8
+    },
+    {
+      "title": "Albert King",
+      "formedDate": "1938-04-22T00:00:00.000Z",
+      "mainGenre": "BLUES",
+      "id": 9
     }
   ],
   "discos": [
@@ -40,8 +46,8 @@
       "avatar": null,
       "recorder": "Apple Records",
       "genres": [
-        "Rock",
-        "Psycholdelic Rock"
+        "ROCK",
+        "PSYCHODELIC_ROCK"
       ],
       "type": "Album",
       "artistId": 1,
