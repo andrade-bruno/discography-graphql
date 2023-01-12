@@ -1,40 +1,50 @@
 {
-	"artists": [
-		{
-			"id": 1,
-			"title": "Pink Floyd",
-			"mainGenre": "Rock"
-		},
-		{
-			"id": 2,
-			"title": "Muddy Waters",
-			"mainGenre": "Blues"
-		},
-		{
-			"id": 3,
-			"title": "BB King",
-			"mainGenre": "Jazz"
-		},
-		{
-			"id": 4,
-			"title": "Motley Crue",
-			"mainGenre": "Hard Rock"
-		}
-	],
-	"discos": [
-		{
-			"id": 1,
-			"title": "Dark Side of the Moon",
-			"releaseDate": "1971-09-21",
-			"avatar": null,
-			"recorder": "Apple Records",
-			"genres": [
-				"Rock",
-				"Psycholdelic Rock"
-			],
-			"type": "Album",
-			"artistId": 1,
-			"contribuitors": "Pink Floyd"
-		}
-	]
+  "artists": [
+    {
+      "id": 1,
+      "title": "Pink Floyd",
+      "mainGenre": "Rock"
+    },
+    {
+      "id": 2,
+      "title": "Muddy Waters",
+      "mainGenre": "Blues"
+    },
+    {
+      "id": 3,
+      "title": "BB King",
+      "mainGenre": "Jazz"
+    },
+    {
+      "id": 4,
+      "title": "Motley Crue",
+      "mainGenre": "Hard Rock"
+    },
+    {
+      "title": "Keith Richards",
+      "mainGenre": "Rock",
+      "id": 5
+    },
+    {
+      "title": "Mick Jagger",
+      "mainGenre": "Rock",
+      "id": 6
+    }
+  ],
+  "discos": [
+    {
+      "id": 1,
+      "title": "Dark Side of the Moon",
+      "releaseDate": "1971-09-21",
+      "avatar": null,
+      "recorder": "Apple Records",
+      "genres": [
+        "Rock",
+        "Psycholdelic Rock"
+      ],
+      "type": "Album",
+      "artistId": 1,
+      "contribuitors": "Pink Floyd"
+    }
+  ]
 }

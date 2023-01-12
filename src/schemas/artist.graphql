@@ -14,6 +14,10 @@ const ArtistSchema = gql`
 		artists: [Artist]
 		artist(id: ID!): Artist 
 	}
+
+	type Mutation {
+		addArtist(title: String!, formedDate: String, mainGenre: String!, avatar: String, bio: String): Artist!
+	}
 `
 
 module.exports = ArtistSchema
