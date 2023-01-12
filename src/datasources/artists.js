@@ -21,6 +21,19 @@ class ArtistsAPI extends RESTDataSource {
 		await this.post('/artists', artist)
 		return artist
 	}
+
+	async updateArtist(newData) {
+		const { id } = newData
+		await this.put(`/artists/${id}`, newData)
+		return await this.get(`/artists/${id}`)
+	}
+
+	async deleteArtist(args) {
+		const { id } = args
+		const artist = await this.get(`/artists/${id}`)
+		await this.delete(`/artists/${id}`)
+		return artist
+	}
 }
 
 module.exports = ArtistsAPI

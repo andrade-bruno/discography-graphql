@@ -16,7 +16,22 @@ const ArtistSchema = gql`
 	}
 
 	type Mutation {
-		addArtist(title: String!, formedDate: String, mainGenre: String!, avatar: String, bio: String): Artist!
+		addArtist(
+			title: String!,
+			formedDate: String,
+			mainGenre: String!,
+			avatar: String,
+			bio: String
+		): Artist!
+		updateArtist(
+			id: ID!,
+			title: String!,
+			formedDate: String,
+			mainGenre: String!,
+			avatar: String,
+			bio: String
+		): Artist!
+		deleteArtist(id: ID!): Artist!
 	}
 `
 

@@ -16,19 +16,17 @@
       "mainGenre": "Jazz"
     },
     {
-      "id": 4,
-      "title": "Motley Crue",
-      "mainGenre": "Hard Rock"
+      "id": 6,
+      "title": "Mick",
+      "mainGenre": "Classic Rock"
     },
     {
-      "title": "Keith Richards",
-      "mainGenre": "Rock",
-      "id": 5
-    },
-    {
-      "title": "Mick Jagger",
-      "mainGenre": "Rock",
-      "id": 6
+      "title": "Holin' Wolf",
+      "formedDate": "1935-06-01",
+      "mainGenre": "Blues",
+      "avatar": "",
+      "bio": null,
+      "id": 7
     }
   ],
   "discos": [

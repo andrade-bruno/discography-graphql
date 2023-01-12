@@ -4,7 +4,9 @@ const artistResolver = {
 		artist: (root, args, { dataSources }, info) => dataSources.artistsAPI.getArtistById(args.id)
 	},
 	Mutation: {
-		addArtist: (root, args, { dataSources }, info) => dataSources.artistsAPI.addArtist(args)
+		addArtist: async (root, args, { dataSources }, info) => dataSources.artistsAPI.addArtist(args),
+		updateArtist: async (root, args, { dataSources }, info) => dataSources.artistsAPI.updateArtist(args),
+		deleteArtist: async (root, args, { dataSources }, info) => dataSources.artistsAPI.deleteArtist(args)
 	}
 }
 
