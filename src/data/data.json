@@ -1,0 +1,57 @@
+{
+  "artists": [
+    {
+      "id": 1,
+      "title": "Pink Floyd",
+      "mainGenre": "PSYCHODELIC_ROCK"
+    },
+    {
+      "id": 2,
+      "title": "Muddy Waters",
+      "mainGenre": "BLUES"
+    },
+    {
+      "id": 3,
+      "title": "BB King",
+      "mainGenre": "JAZZ"
+    },
+    {
+      "id": 6,
+      "title": "Mick",
+      "mainGenre": "ROCK"
+    },
+    {
+      "id": 7,
+      "title": "Howlin' Wolf",
+      "mainGenre": "BLUES"
+    },
+    {
+      "title": "Muddy Waters",
+      "formedDate": "1938-04-22T00:00:00.000Z",
+      "mainGenre": "BLUES",
+      "id": 8
+    },
+    {
+      "title": "Albert King",
+      "formedDate": "1938-04-22T00:00:00.000Z",
+      "mainGenre": "BLUES",
+      "id": 9
+    }
+  ],
+  "discos": [
+    {
+      "id": 1,
+      "title": "Dark Side of the Moon",
+      "releaseDate": "1971-09-21",
+      "avatar": null,
+      "recorder": "Apple Records",
+      "genres": [
+        "ROCK",
+        "PSYCHODELIC_ROCK"
+      ],
+      "type": "Album",
+      "artistId": 1,
+      "contribuitors": "Pink Floyd"
+    }
+  ]
+}
