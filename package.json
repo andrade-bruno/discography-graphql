@@ -4,8 +4,6 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"build": "npx tsc",
-		"prestart": "npm run build",
 		"start": "nodemon dist/index.js",
 		"dev": "nodemon -e js,graphql src/index.js",
 		"json-server": "npx json-server --watch src/data/data.json"
@@ -30,7 +28,6 @@
 	},
 	"devDependencies": {
 		"json-server": "^0.16.1",
-		"nodemon": "^2.0.20",
-		"typescript": "^4.9.4"
+		"nodemon": "^2.0.20"
 	}
 }
