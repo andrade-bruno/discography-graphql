@@ -1,12 +1,13 @@
 {
 	"name": "discography-graphql",
 	"version": "1.0.0",
-	"description": "",
+	"description": "Building an NodeJS server for a Discography API with GraphQL and Apollo Server",
 	"main": "index.js",
 	"scripts": {
 		"start": "nodemon dist/index.js",
-		"dev": "nodemon -e js,graphql src/index.js",
-		"json-server": "npx json-server --watch src/data/data.json"
+		"json-server": "npx json-server --watch src/data/data.json",
+		"dev:js": "nodemon -e js,graphql src/index.js",
+		"dev": "tsnd --respawn --transpile-only api/index.ts"
 	},
 	"repository": {
 		"type": "git",
@@ -22,12 +23,17 @@
 	"dependencies": {
 		"apollo-datasource-rest": "^3.7.0",
 		"apollo-server": "^3.11.1",
+		"class-validator": "^0.14.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
-		"graphql": "^16.6.0"
+		"graphql": "^15.8.0",
+		"reflect-metadata": "^0.1.13",
+		"type-graphql": "^1.1.1"
 	},
 	"devDependencies": {
 		"json-server": "^0.16.1",
-		"nodemon": "^2.0.20"
+		"nodemon": "^2.0.20",
+		"ts-node-dev": "^2.0.0",
+		"typescript": "^4.9.4"
 	}
 }
