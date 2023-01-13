@@ -4,12 +4,12 @@ import CreateArtistInput from '../dtos/input/create-artist'
 @Resolver()
 export class ArtistsResolver {
 	@Query(() => String)
-	async hello() {
-		return 'Hello'
+	async getArtists() {
+		return "Artists"
 	}
 
-	@Mutation(() => Boolean)
-	async createArtist(@Arg('data') data: CreateArtistInput) {
+	@Mutation(returns => Boolean)
+	async createArtist(@Arg("data") data: CreateArtistInput) {
 		return true
 	}
 }

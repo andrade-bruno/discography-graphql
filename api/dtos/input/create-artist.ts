@@ -1,19 +1,18 @@
 import { Field, InputType } from "type-graphql"
 
 @InputType()
-export default class CreateArtistInput {
+export class CreateArtistInput {
 	@Field()
 	title: String
 
 	@Field()
-	formedDate: Date
-	
-	@Field()
 	mainGenre: String
 
 	@Field()
-	avatar: String
+	avatar?: String
 
 	@Field()
-	bio: String
+	bio?: String
 }
+
+export default CreateArtistInput

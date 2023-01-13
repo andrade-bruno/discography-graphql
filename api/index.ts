@@ -3,13 +3,16 @@ import 'reflect-metadata'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 import ArtistsResolver from './resolvers/artists'
+import DiscosResolver from './resolvers/discos'
 
 async function bootstrap() {
 	const schema = await buildSchema({
 		resolvers: [
 			ArtistsResolver,
+			DiscosResolver
 		],
-		emitSchemaFile: 'api/schema/schemas.gql'
+		validate: false,
+		emitSchemaFile: 'api/schemas/schemas.gql'
 	})
 
 	const server = new ApolloServer({
