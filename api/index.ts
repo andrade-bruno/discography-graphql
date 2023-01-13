@@ -9,7 +9,7 @@ async function bootstrap() {
 		resolvers: [
 			ArtistsResolver,
 		],
-		emitSchemaFile: true
+		emitSchemaFile: 'api/schema/schemas.gql'
 	})
 
 	const server = new ApolloServer({
