@@ -1,5 +1,4 @@
 import { Field, ID, InputType } from "type-graphql"
-import { GraphQLID } from "graphql"
 import Artist from "../models/artist.model"
 
 @InputType()

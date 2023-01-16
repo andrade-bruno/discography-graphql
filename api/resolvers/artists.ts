@@ -4,14 +4,14 @@ import Artist from '../dtos/models/artist.model'
 
 @Resolver(belongsTo => Artist)
 export class ArtistsResolver {
-	@Query(() => Artist)
+	@Query(() => [Artist])
 	async getArtists() {
-		return {
+		return [{
 			title: "String",
 			mainGenre: "String",
 			avatar: "String",
 			bio: "String"
-		}
+		}]
 	}
 
 	@Mutation(() => Artist)

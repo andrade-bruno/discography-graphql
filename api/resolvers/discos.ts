@@ -5,9 +5,9 @@ import Disco from '../dtos/models/disco.model'
 
 @Resolver(belongsTo => Disco)
 export class DiscosResolver {
-	@Query(() => Disco)
+	@Query(() => [Disco])
 	async getDiscos() {
-		return {
+		return [{
 			title: "String",
 			releaseDate: "String",
 			avatar: "String",
@@ -15,7 +15,7 @@ export class DiscosResolver {
 			genres: "String",
 			type: "String",
 			contributors: "String"
-		}
+		}]
 	}
 
 	@Mutation(() => Disco)

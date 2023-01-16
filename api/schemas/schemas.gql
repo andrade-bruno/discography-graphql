@@ -28,6 +28,11 @@ input CreateDiscoInput {
   type: String!
 }
 
+input CreateUserInput {
+  email: String!
+  name: String!
+}
+
 """
 The javascript `Date` as string. Type represents date and time as the ISO Date string.
 """
@@ -48,9 +53,18 @@ type Disco {
 type Mutation {
   createArtist(data: CreateArtistInput!): Artist!
   createDisco(data: CreateDiscoInput!): Disco!
+  createUser(data: CreateUserInput!): User!
 }
 
 type Query {
-  getArtists: Artist!
-  getDiscos: Disco!
+  getArtists: [Artist!]!
+  getDiscos: [Disco!]!
+  getUsers: [User!]!
+}
+
+type User {
+  active: Boolean!
+  email: String!
+  id: ID!
+  name: String!
 }
