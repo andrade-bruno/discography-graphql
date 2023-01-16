@@ -1,4 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql'
+import { MessageDeleteOutput } from '../dtos/output'
 import {CreateUserInput, UserOutput} from '../dtos/input/user'
 import User from '../dtos/models/user.model'
 import database from '../models'
@@ -23,6 +24,19 @@ export class UsersResolver {
 			const message = error.errors[0].message
 			console.log(error.errors[0])
 			return { message, data: null }
+		}
+	}
+
+	@Mutation(() => MessageDeleteOutput)
+	async deleteUser(@Arg("id") id: String) {
+		try {
+			const status = await database.Users.destroy({ where: {id}})
+			if (status == 0) return { message: "Can't delete. User does'nt exists" }
+			return { message: 'User deleted successfully' }
+		} catch (error: any) {
+			const message = error.errors[0].message
+			console.log(error.errors[0])
+			return message
 		}
 	}
 }

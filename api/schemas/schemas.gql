@@ -66,6 +66,7 @@ type Mutation {
   createDisco(data: CreateDiscoInput!): Disco!
   createUser(data: CreateUserInput!): UserOutput!
   deleteArtist(id: String!): MessageDeleteOutput!
+  deleteUser(id: String!): MessageDeleteOutput!
 }
 
 type Query {
