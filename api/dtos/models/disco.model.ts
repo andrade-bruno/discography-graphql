@@ -1,34 +1,34 @@
-import { Field, ObjectType } from "type-graphql"
+import { Field, ID, ObjectType, } from "type-graphql"
 import Artist from "./artist.model"
 
 @ObjectType()
 export class Disco {
-	@Field()
-	// artist: Artist
-	artist: Number
-
+	@Field(() => ID)
+	artistId: number
+	
 	@Field()
 	title: String
 
 	@Field()
-	// releaseDate: Date
-	releaseDate: String
+	releaseDate: Date
 
-	@Field()
+	@Field({ nullable: true })
 	avatar: String
 
 	@Field()
 	recorder: String
 
-	@Field()
+	@Field({ nullable: true })
 	// genres: [GenresEnum]
-	genres: [String]
+	// genres: [String]
+	genres: String
 
 	@Field()
 	type: String
 
-	@Field()
-	contributors: [String]
+	@Field({ nullable: true })
+	// contributors: [String]
+	contributors: String
 }
 
 export default Disco

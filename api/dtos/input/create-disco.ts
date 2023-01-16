@@ -1,33 +1,32 @@
-import { Field, InputType } from "type-graphql"
+import { Field, ID, InputType } from "type-graphql"
+import { GraphQLID } from "graphql"
 import Artist from "../models/artist.model"
 
 @InputType()
 export class CreateDiscoInput {
-	@Field()
-	// artist: Artist
-	artist: Number
+	@Field(type => ID)
+	artistId: String
 
 	@Field()
 	title: String
 
 	@Field()
-	// releaseDate: 
-	releaseDate: String
+	releaseDate: Date
 	
-	@Field()
+	@Field({ nullable: true })
 	avatar: String
 
 	@Field()
 	recorder: String
 
-	@Field()
+	@Field({ nullable: true })
 	// genres: [GenresEnum]
 	genres: String
 
 	@Field()
 	type: String
 
-	@Field()
+	@Field({ nullable: true })
 	// contributors: [String]
 	contributors: String
 }

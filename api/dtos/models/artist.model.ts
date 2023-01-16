@@ -8,9 +8,9 @@ export default class Artist {
 	@Field()
 	mainGenre: String
 
-	@Field()
-	avatar?: String
+	@Field({ nullable: true })
+	avatar: String
 
-	@Field()
-	bio?: String
+	@Field({ nullable: true })
+	bio: String
 }

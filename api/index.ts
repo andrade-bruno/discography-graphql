@@ -1,5 +1,6 @@
 import 'reflect-metadata'
 
+import database from './models'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 import ArtistsResolver from './resolvers/artists'
@@ -22,7 +23,11 @@ async function bootstrap() {
 	const { url } = await server.listen()
 
 	console.info('\nServer is running')
-	console.info(`${url}\n`)
+	console.info(`${url}`)
+	
+	database.sequelize.sync()
+		.then(() => console.info('Database synced successfully\n'))
+		.catch((error: any) => console.error(error))
 }
 
 bootstrap()

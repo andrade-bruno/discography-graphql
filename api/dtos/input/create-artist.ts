@@ -8,11 +8,11 @@ export class CreateArtistInput {
 	@Field()
 	mainGenre: String
 
-	@Field()
-	avatar?: String
+	@Field({ nullable: true })
+	avatar: String
 
-	@Field()
-	bio?: String
+	@Field({ nullable: true })
+	bio: String
 }
 
 export default CreateArtistInput
