@@ -3,7 +3,7 @@
 import { Model, UUIDV4 } from 'sequelize'
 
 interface UserAttributes {
-	id: number,
+	id: string,
 	name: string,
 	email: string,
 	active: boolean
@@ -11,16 +11,13 @@ interface UserAttributes {
 
 module.exports = (sequelize: any, DataTypes: any) => {
 	class Users extends Model<UserAttributes> implements UserAttributes {
-		id: number;
+		id: string;
 		name: string;
 		email: string;
 		active: boolean;
 
 		static associate(models: any) {
 			// define association here
-			// Users.belongsToMany(models.PROJECTS, {
-			// 	through: 'ProjectAssignments'
-			// })
 		}
 	}
 

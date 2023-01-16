@@ -4,7 +4,7 @@ import Artist from "./artist.model"
 @ObjectType()
 export class Disco {
 	@Field(() => ID)
-	artistId: number
+	artistId: Number
 	
 	@Field()
 	title: String
@@ -20,10 +20,10 @@ export class Disco {
 
 	@Field({ nullable: true })
 	// genres: [GenresEnum]
-	// genres: [String]
 	genres: String
 
 	@Field()
+	// type: [TypesEnum]
 	type: String
 
 	@Field({ nullable: true })

@@ -3,7 +3,7 @@
 import { Model, UUIDV4 } from 'sequelize'
 
 interface ArtistAttributes {
-	id: number,
+	id: string,
 	title: string,
 	mainGenre: string
 	avatar?: string,
@@ -12,7 +12,7 @@ interface ArtistAttributes {
 
 module.exports = (sequelize: any, DataTypes: any) => {
 	class Artists extends Model<ArtistAttributes> implements ArtistAttributes {
-		id: number;
+		id: string;
 		title: string;
 		mainGenre: string;
 		avatar?: string;
@@ -20,6 +20,9 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
 		static associate(models: any) {
 			// define association here
+			Artists.hasMany(models.Discos, {
+				foreignKey: 'artistId'
+			})
 		}
 	}
 

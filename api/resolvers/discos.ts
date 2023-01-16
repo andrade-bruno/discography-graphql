@@ -14,7 +14,8 @@ export class DiscosResolver {
 			recorder: "String",
 			genres: "String",
 			type: "String",
-			contributors: "String"
+			contributors: "String",
+			artistId: 1
 		}]
 	}
 
