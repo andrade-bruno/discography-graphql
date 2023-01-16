@@ -21,7 +21,7 @@ export const development = {
 	host: process.env.DB_HOST,
 	port: Number(process.env.DB_PORT),
 	dialect: process.env.DB_DIALECT,
-	logging: true
+	logging: console.log
 }
 
 export default development

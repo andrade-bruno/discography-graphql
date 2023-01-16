@@ -7,6 +7,7 @@ import { buildSchema } from 'type-graphql'
 import ArtistsResolver from './resolvers/artists'
 import DiscosResolver from './resolvers/discos'
 import UsersResolver from './resolvers/users'
+import { bulkInsertArtists, bulkInsertDiscos, bulkInsertUsers } from './seeders'
 
 async function bootstrap() {
 	const schema = await buildSchema({
@@ -30,7 +31,12 @@ async function bootstrap() {
 	console.info(`${url}`)
 	
 	database.sequelize.sync()
-		.then(() => console.info('Database synced successfully\n'))
+		.then(() => {
+			console.info('Database synced successfully\n')
+			bulkInsertUsers()
+			bulkInsertArtists()
+			bulkInsertDiscos()
+		})
 		.catch((error: any) => console.error(error))
 }
 

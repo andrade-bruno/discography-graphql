@@ -13,6 +13,12 @@ export class User {
 
 	@Field()
 	active: boolean
+
+	@Field()
+	createdAt: Date
+
+	@Field()
+	updatedAt: Date
 }
 
 export default User

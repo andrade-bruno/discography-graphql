@@ -64,7 +64,9 @@ type Query {
 
 type User {
   active: Boolean!
+  createdAt: DateTime!
   email: String!
   id: ID!
   name: String!
+  updatedAt: DateTime!
 }
