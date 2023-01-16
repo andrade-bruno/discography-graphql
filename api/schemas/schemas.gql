@@ -67,12 +67,20 @@ type Mutation {
   createUser(data: CreateUserInput!): UserOutput!
   deleteArtist(id: String!): MessageDeleteOutput!
   deleteUser(id: String!): MessageDeleteOutput!
+  updateUser(data: UpdateUserInput!): UserOutput!
 }
 
 type Query {
   getArtists: [Artist!]!
   getDiscos: [Disco!]!
   getUsers: [User!]!
+}
+
+input UpdateUserInput {
+  active: Boolean
+  email: String
+  id: ID!
+  name: String
 }
 
 type User {

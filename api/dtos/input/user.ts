@@ -18,3 +18,18 @@ export class UserOutput {
 	@Field(returns => User, { nullable: true})
 	data?: User
 }
+
+@InputType()
+export class UpdateUserInput {
+	@Field(() => ID)
+	id: String
+
+	@Field({ nullable: true })
+	name: String
+
+	@Field({ nullable: true })
+	email: String
+
+	@Field({ nullable: true })
+	active: Boolean
+}
