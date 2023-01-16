@@ -11,17 +11,17 @@ dotenv.config()
 // 	password: process.env.DB_PWD,
 // 	database: process.env.DB_NAME,
 // 	logging: true,
+//	models: [Artists, Songs, Discos]
 // })
 
-export default {
-	development: {
-		username: process.env.DB_USER,
-		password: process.env.DB_PWD,
-		database: process.env.DB_NAME,
-		host: process.env.DB_HOST,
-		port: Number(process.env.DB_PORT),
-		dialect: process.env.DB_DIALECT,
-		logging: true
-		// models: [Artists, Songs, Discos]
-	}
+export const development = {
+	username: process.env.DB_USER,
+	password: process.env.DB_PWD,
+	database: process.env.DB_NAME,
+	host: process.env.DB_HOST,
+	port: Number(process.env.DB_PORT),
+	dialect: process.env.DB_DIALECT,
+	logging: true
 }
+
+export default development

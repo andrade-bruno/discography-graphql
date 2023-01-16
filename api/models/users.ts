@@ -10,7 +10,7 @@ interface UserAttributes {
 }
 
 module.exports = (sequelize: any, DataTypes: any) => {
-	class USERS extends Model<UserAttributes> implements UserAttributes {
+	class Users extends Model<UserAttributes> implements UserAttributes {
 		id: number;
 		name: string;
 		email: string;
@@ -18,13 +18,13 @@ module.exports = (sequelize: any, DataTypes: any) => {
 
 		static associate(models: any) {
 			// define association here
-			// USERS.belongsToMany(models.PROJECTS, {
+			// Users.belongsToMany(models.PROJECTS, {
 			// 	through: 'ProjectAssignments'
 			// })
 		}
 	}
 
-	USERS.init({
+	Users.init({
 		id: {
 			type: DataTypes.UUID,
 			defaultValue: UUIDV4,
@@ -47,7 +47,7 @@ module.exports = (sequelize: any, DataTypes: any) => {
 		}
 	}, {
 		sequelize,
-		modelName: 'USERS',
+		modelName: 'Users',
 	});
-	return USERS;
+	return Users;
 };
