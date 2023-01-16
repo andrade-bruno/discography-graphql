@@ -45,7 +45,7 @@ The javascript `Date` as string. Type represents date and time as the ISO Date s
 scalar DateTime
 
 type Disco {
-  artist: Artist!
+  artist: Artist
   artistId: ID!
   avatar: String
   contributors: String
@@ -71,9 +71,10 @@ type Mutation {
 }
 
 type Query {
-  getArtists: [Artist!]!
-  getDiscos: [Disco!]!
-  getUsers: [User!]!
+  getArtists: [Artist!]
+  getDiscoById(id: String!): Disco
+  getDiscos: [Disco!]
+  getUsers: [User!]
 }
 
 input UpdateUserInput {

@@ -6,7 +6,7 @@ import database from '../models'
 
 @Resolver(belongsTo => Artist)
 export class ArtistsResolver {
-	@Query(() => [Artist])
+	@Query(() => [Artist], { nullable: true })
 	async getArtists() {
 		try {
 			const artists = await database.Artists.findAll()

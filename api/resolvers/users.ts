@@ -6,7 +6,7 @@ import database from '../models'
 
 @Resolver(belongsTo => User)
 export class UsersResolver {
-	@Query(() => [User])
+	@Query(() => [User], { nullable: true })
 	async getUsers() {
 		try {
 			const users = await database.Users.findAll()
