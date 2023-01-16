@@ -1,4 +1,5 @@
-import { Field, ID, InputType } from "type-graphql"
+import { Field, ID, InputType, ObjectType } from "type-graphql"
+import User from "../models/user.model"
 
 @InputType()
 export class CreateUserInput {
@@ -7,6 +8,15 @@ export class CreateUserInput {
 
 	@Field()
 	email: String
+}
+
+@ObjectType()
+export class CreateUserOutput {
+	@Field()
+	message: String
+
+	@Field(returns => User, { nullable: true})
+	data?: User
 }
 
 export default CreateUserInput

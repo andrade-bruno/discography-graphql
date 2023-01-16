@@ -1,5 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql'
-import CreateUserInput from '../dtos/input/create-user'
+import {CreateUserInput, CreateUserOutput} from '../dtos/input/create-user'
 import User from '../dtos/models/user.model'
 import database from '../models'
 
@@ -11,15 +11,19 @@ export class UsersResolver {
 		return users
 	}
 
-	@Mutation(() => User)
+	@Mutation(() => CreateUserOutput)
 	async createUser(@Arg("data") data: CreateUserInput) {
+		let user = { ...data, active: true }
 
-		let res = {
-			...data,
-			id: '1231',
-			active: true
+		try {
+			const res = await database.Users.create(user)
+			let message = 'User created successfully'
+			return { message, data: res }
+		} catch (error: any) {
+			const message = error.errors[0].message
+			console.log(message)
+			return { message, data: null }
 		}
-		return res
 	}
 }
 
