@@ -4,18 +4,12 @@ import database from './models'
 import { ApolloServer } from 'apollo-server'
 import { buildSchema } from 'type-graphql'
 
-import ArtistsResolver from './resolvers/artists'
-import DiscosResolver from './resolvers/discos'
-import UsersResolver from './resolvers/users'
+import resolvers from './resolvers'
 import { bulkInsertArtists, bulkInsertDiscos, bulkInsertUsers } from './seeders'
 
 async function bootstrap() {
 	const schema = await buildSchema({
-		resolvers: [
-			ArtistsResolver,
-			DiscosResolver,
-			UsersResolver
-		],
+		resolvers,
 		validate: false,
 		emitSchemaFile: 'api/schemas/schemas.gql'
 	})
