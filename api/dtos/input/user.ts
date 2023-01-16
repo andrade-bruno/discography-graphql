@@ -11,12 +11,10 @@ export class CreateUserInput {
 }
 
 @ObjectType()
-export class CreateUserOutput {
+export class UserOutput {
 	@Field()
 	message: String
 
 	@Field(returns => User, { nullable: true})
 	data?: User
 }
-
-export default CreateUserInput

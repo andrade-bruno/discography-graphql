@@ -4,7 +4,10 @@ import Artist from "./artist.model"
 @ObjectType()
 export class Disco {
 	@Field(() => ID)
-	artistId: Number
+	id: String
+
+	@Field(() => ID)
+	artistId: String
 	
 	@Field()
 	title: String

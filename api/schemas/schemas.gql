@@ -6,8 +6,14 @@
 type Artist {
   avatar: String
   bio: String
+  id: ID!
   mainGenre: String!
   title: String!
+}
+
+type ArtistOutput {
+  data: Artist
+  message: String!
 }
 
 input CreateArtistInput {
@@ -33,11 +39,6 @@ input CreateUserInput {
   name: String!
 }
 
-type CreateUserOutput {
-  data: User
-  message: String!
-}
-
 """
 The javascript `Date` as string. Type represents date and time as the ISO Date string.
 """
@@ -49,16 +50,22 @@ type Disco {
   avatar: String
   contributors: String
   genres: String
+  id: ID!
   recorder: String!
   releaseDate: DateTime!
   title: String!
   type: String!
 }
 
+type MessageDeleteOutput {
+  message: String!
+}
+
 type Mutation {
-  createArtist(data: CreateArtistInput!): Artist!
+  createArtist(data: CreateArtistInput!): ArtistOutput!
   createDisco(data: CreateDiscoInput!): Disco!
-  createUser(data: CreateUserInput!): CreateUserOutput!
+  createUser(data: CreateUserInput!): UserOutput!
+  deleteArtist(id: String!): MessageDeleteOutput!
 }
 
 type Query {
@@ -74,4 +81,9 @@ type User {
   id: ID!
   name: String!
   updatedAt: DateTime!
+}
+
+type UserOutput {
+  data: User
+  message: String!
 }

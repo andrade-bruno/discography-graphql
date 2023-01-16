@@ -1,5 +1,5 @@
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
-import CreateDiscoInput from '../dtos/input/create-disco'
+import CreateDiscoInput from '../dtos/input/disco'
 import Artist from '../dtos/models/artist.model'
 import Disco from '../dtos/models/disco.model'
 
