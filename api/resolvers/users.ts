@@ -8,8 +8,14 @@ import database from '../models'
 export class UsersResolver {
 	@Query(() => [User])
 	async getUsers() {
-		const users = await database.Users.findAll()
-		return users
+		try {
+			const users = await database.Users.findAll()
+			return users
+		} catch (error: any) {
+			const message = error.errors[0].message
+			console.log(message)
+			return null
+		}
 	}
 
 	@Mutation(() => UserOutput)

@@ -8,8 +8,14 @@ import database from '../models'
 export class ArtistsResolver {
 	@Query(() => [Artist])
 	async getArtists() {
-		const data = await database.Artists.findAll()
-		return data
+		try {
+			const artists = await database.Artists.findAll()
+			return artists
+		} catch (error: any) {
+			const message = error.errors[0].message
+			console.log(message)
+			return null
+		}
 	}
 
 	@Mutation(() => ArtistOutput)
