@@ -4,7 +4,7 @@ import Disco from "../models/disco.model"
 @InputType()
 export class CreateDiscoInput {
 	@Field(type => ID)
-	artistId: Number
+	artistId: String
 
 	@Field()
 	title: String
@@ -23,6 +23,39 @@ export class CreateDiscoInput {
 	genres: String
 
 	@Field()
+	// type: [TypesEnum]
+	type: String
+
+	@Field({ nullable: true })
+	// contributors: [String]
+	contributors: String
+}
+
+@InputType()
+export class UpdateDiscoInput {
+	@Field(() => ID)
+	id: String
+	
+	@Field(type => ID, { nullable: true })
+	artistId: String
+
+	@Field({ nullable: true })
+	title: String
+
+	@Field({ nullable: true })
+	releaseDate: Date
+	
+	@Field({ nullable: true })
+	avatar: String
+
+	@Field({ nullable: true })
+	recorder: String
+
+	@Field({ nullable: true })
+	// genres: [GenresEnum]
+	genres: String
+
+	@Field({ nullable: true })
 	// type: [TypesEnum]
 	type: String
 

@@ -1,5 +1,5 @@
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
-import { CreateDiscoInput, DiscoOutput } from '../dtos/input/disco'
+import { CreateDiscoInput, UpdateDiscoInput, DiscoOutput } from '../dtos/input/disco'
 import Artist from '../dtos/models/artist.model'
 import Disco from '../dtos/models/disco.model'
 import { MessageDeleteOutput } from '../dtos/output'
@@ -32,6 +32,19 @@ export class DiscosResolver {
 		try {
 			const res = await database.Discos.create(data)
 			return { message: 'Disco created successfully', data: res }
+		} catch (error: any) {
+			return { message: error.message, data: null }
+		}
+	}
+
+	@Mutation(() => DiscoOutput)
+	async updateDisco(@Arg("data") data: UpdateDiscoInput) {
+		try {
+			const status = await database.Discos.update(data, { where: {id: data.id }})
+			if (status == 0) return { message: "Can't update. Disco does'nt exists", data: null }
+
+			const updatedDisco = await database.Discos.findOne({ where: {id: data.id} })
+			return { message: 'Disco updated successfully', data: updatedDisco }
 		} catch (error: any) {
 			return { message: error.message, data: null }
 		}

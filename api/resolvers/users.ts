@@ -32,7 +32,6 @@ export class UsersResolver {
 	async updateUser(@Arg("data") data: UpdateUserInput) {
 		try {
 			const status = await database.Users.update(data, { where: {id: data.id }})
-			console.log(status)
 			if (status == 0) return { message: "Can't update. User does'nt exists", data: null }
 
 			const updatedUser = await database.Users.findOne({ where: {id: data.id} })
