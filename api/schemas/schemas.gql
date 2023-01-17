@@ -6,9 +6,11 @@
 type Artist {
   avatar: String
   bio: String
+  createdAt: DateTime!
   id: ID!
   mainGenre: String!
   title: String!
+  updatedAt: DateTime!
 }
 
 type ArtistOutput {
@@ -49,12 +51,14 @@ type Disco {
   artistId: ID!
   avatar: String
   contributors: String
+  createdAt: DateTime!
   genres: String
   id: ID!
   recorder: String!
   releaseDate: DateTime!
   title: String!
   type: String!
+  updatedAt: DateTime!
 }
 
 type DiscoOutput {
@@ -71,6 +75,7 @@ type Mutation {
   createDisco(data: CreateDiscoInput!): DiscoOutput!
   createUser(data: CreateUserInput!): UserOutput!
   deleteArtist(id: String!): MessageDeleteOutput!
+  deleteDisco(id: String!): MessageDeleteOutput!
   deleteUser(id: String!): MessageDeleteOutput!
   updateUser(data: UpdateUserInput!): UserOutput!
 }

@@ -16,4 +16,10 @@ export default class Artist {
 
 	@Field({ nullable: true })
 	bio: String
+
+	@Field()
+	createdAt: Date
+
+	@Field()
+	updatedAt: Date
 }

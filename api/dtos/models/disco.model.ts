@@ -32,6 +32,12 @@ export class Disco {
 	@Field({ nullable: true })
 	// contributors: [String]
 	contributors: String
+
+	@Field()
+	createdAt: Date
+
+	@Field()
+	updatedAt: Date
 }
 
 export default Disco

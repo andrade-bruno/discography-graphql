@@ -2,6 +2,7 @@ import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphq
 import { CreateDiscoInput, DiscoOutput } from '../dtos/input/disco'
 import Artist from '../dtos/models/artist.model'
 import Disco from '../dtos/models/disco.model'
+import { MessageDeleteOutput } from '../dtos/output'
 import database from '../models'
 
 @Resolver(belongsTo => Disco)
@@ -33,6 +34,17 @@ export class DiscosResolver {
 			return { message: 'Disco created successfully', data: res }
 		} catch (error: any) {
 			return { message: error.message, data: null }
+		}
+	}
+
+	@Mutation(() => MessageDeleteOutput)
+	async deleteDisco(@Arg("id") id: String) {
+		try {
+			const status = await database.Discos.destroy({ where: {id}})
+			if (status == 0) return { message: "Can't delete. Disco does'nt exists" }
+			return { message: 'Disco deleted successfully' }
+		} catch (error: any) {
+			return { message: error.message }
 		}
 	}
 
