@@ -1,4 +1,4 @@
-import { Field, InputType, ObjectType } from "type-graphql"
+import { Field, ID, InputType, ObjectType } from "type-graphql"
 import Artist from '../models/artist.model'
 
 @InputType()
@@ -7,6 +7,24 @@ export class CreateArtistInput {
 	title: String
 
 	@Field()
+	mainGenre: String
+
+	@Field({ nullable: true })
+	avatar: String
+
+	@Field({ nullable: true })
+	bio: String
+}
+
+@InputType()
+export class UpdateArtistInput {
+	@Field(() => ID)
+	id: String
+
+	@Field({ nullable: true })
+	title: String
+
+	@Field({ nullable: true })
 	mainGenre: String
 
 	@Field({ nullable: true })

@@ -1,5 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql'
-import { CreateArtistInput, ArtistOutput } from '../dtos/input/artist'
+import { CreateArtistInput, ArtistOutput, UpdateArtistInput } from '../dtos/input/artist'
 import { MessageDeleteOutput } from '../dtos/output'
 import Artist from '../dtos/models/artist.model'
 import database from '../models'
@@ -31,6 +31,19 @@ export class ArtistsResolver {
 		try {
 			const res = await database.Artists.create(data)
 			return { message: 'Artist created successfully', data: res }
+		} catch (error: any) {
+			return { message: error.message, data: null }
+		}
+	}
+
+	@Mutation(() => ArtistOutput)
+	async updateArtist(@Arg("data") data: UpdateArtistInput) {
+		try {
+			const status = await database.Artists.update(data, { where: {id: data.id }})
+			if (status == 0) return { message: "Can't update. Artist does'nt exists", data: null }
+
+			const updatedArtist = await database.Artists.findOne({ where: {id: data.id} })
+			return { message: 'Artist updated successfully', data: updatedArtist }
 		} catch (error: any) {
 			return { message: error.message, data: null }
 		}
