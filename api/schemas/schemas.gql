@@ -85,6 +85,7 @@ type Query {
   getArtists: [Artist!]
   getDiscoById(id: String!): Disco
   getDiscos: [Disco!]
+  getUserById(id: String!): UserOutput
   getUsers: [User!]
 }
 

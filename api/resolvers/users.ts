@@ -16,6 +16,16 @@ export class UsersResolver {
 		}
 	}
 
+	@Query(returns => UserOutput, { nullable: true })
+	async getUserById(@Arg('id') id: string) {
+		try {
+			const data = await database.Users.findOne({ where: {id}})
+			return data
+		} catch (error: any) {
+			return null
+		}
+	}
+
 	@Mutation(() => UserOutput)
 	async createUser(@Arg("data") data: CreateUserInput) {
 		let user = { ...data, active: true }
