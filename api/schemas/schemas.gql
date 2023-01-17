@@ -82,10 +82,11 @@ type Mutation {
 }
 
 type Query {
+  getArtistById(id: String!): Artist
   getArtists: [Artist!]
   getDiscoById(id: String!): Disco
   getDiscos: [Disco!]
-  getUserById(id: String!): UserOutput
+  getUserById(id: String!): User
   getUsers: [User!]
 }
 

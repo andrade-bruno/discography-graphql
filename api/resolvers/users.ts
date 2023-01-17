@@ -16,7 +16,7 @@ export class UsersResolver {
 		}
 	}
 
-	@Query(returns => UserOutput, { nullable: true })
+	@Query(returns => User, { nullable: true })
 	async getUserById(@Arg('id') id: string) {
 		try {
 			const data = await database.Users.findOne({ where: {id}})

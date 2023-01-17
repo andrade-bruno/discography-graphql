@@ -16,6 +16,16 @@ export class ArtistsResolver {
 		}
 	}
 
+	@Query(returns => Artist, { nullable: true })
+	async getArtistById(@Arg('id') id: string) {
+		try {
+			const data = await database.Artists.findOne({ where: {id}})
+			return data
+		} catch (error: any) {
+			return null
+		}
+	}
+
 	@Mutation(() => ArtistOutput)
 	async createArtist(@Arg("data") data: CreateArtistInput) {
 		try {
