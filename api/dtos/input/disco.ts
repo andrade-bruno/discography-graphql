@@ -1,5 +1,5 @@
-import { Field, ID, InputType } from "type-graphql"
-import Artist from "../models/artist.model"
+import { Field, ID, InputType, ObjectType } from "type-graphql"
+import Disco from "../models/disco.model"
 
 @InputType()
 export class CreateDiscoInput {
@@ -31,4 +31,11 @@ export class CreateDiscoInput {
 	contributors: String
 }
 
-export default CreateDiscoInput
+@ObjectType()
+export class DiscoOutput {
+	@Field()
+	message: String
+
+	@Field(returns => Disco, { nullable: true})
+	data?: Disco
+}

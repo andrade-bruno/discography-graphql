@@ -1,5 +1,5 @@
 import { Arg, FieldResolver, Mutation, Query, Resolver, Root } from 'type-graphql'
-import CreateDiscoInput from '../dtos/input/disco'
+import { CreateDiscoInput, DiscoOutput } from '../dtos/input/disco'
 import Artist from '../dtos/models/artist.model'
 import Disco from '../dtos/models/disco.model'
 import database from '../models'
@@ -12,8 +12,6 @@ export class DiscosResolver {
 			const discos = await database.Discos.findAll()
 			return discos
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(message)
 			return null
 		}
 	}
@@ -24,15 +22,18 @@ export class DiscosResolver {
 			const disco = await database.Discos.findOne({ where: {id}})
 			return disco
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(message)
 			return null
 		}
 	}
 
-	@Mutation(() => Disco)
+	@Mutation(() => DiscoOutput)
 	async createDisco(@Arg("data") data: CreateDiscoInput) {
-		return data
+		try {
+			const res = await database.Discos.create(data)
+			return { message: 'Disco created successfully', data: res }
+		} catch (error: any) {
+			return { message: error.message, data: null }
+		}
 	}
 
 	@FieldResolver(returns => Artist, { nullable: true })
@@ -41,8 +42,6 @@ export class DiscosResolver {
 			const artist = await database.Artists.findOne({ where: {id: String(disco.dataValues.artistId)}})
 			return artist
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(message)
 			return null
 		}
 	}

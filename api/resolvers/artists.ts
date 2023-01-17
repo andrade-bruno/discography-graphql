@@ -12,8 +12,6 @@ export class ArtistsResolver {
 			const artists = await database.Artists.findAll()
 			return artists
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(message)
 			return null
 		}
 	}
@@ -24,9 +22,7 @@ export class ArtistsResolver {
 			const res = await database.Artists.create(data)
 			return { message: 'Artist created successfully', data: res }
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(error.errors[0])
-			return { message, data: null }
+			return { message: error.message, data: null }
 		}
 	}
 
@@ -37,9 +33,7 @@ export class ArtistsResolver {
 			if (status == 0) return { message: "Can't delete. Artist does'nt exists" }
 			return { message: 'Artist deleted successfully' }
 		} catch (error: any) {
-			const message = error.errors[0].message
-			console.log(error.errors[0])
-			return message
+			return { message: error.message }
 		}
 	}
 }

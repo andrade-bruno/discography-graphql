@@ -57,13 +57,18 @@ type Disco {
   type: String!
 }
 
+type DiscoOutput {
+  data: Disco
+  message: String!
+}
+
 type MessageDeleteOutput {
   message: String!
 }
 
 type Mutation {
   createArtist(data: CreateArtistInput!): ArtistOutput!
-  createDisco(data: CreateDiscoInput!): Disco!
+  createDisco(data: CreateDiscoInput!): DiscoOutput!
   createUser(data: CreateUserInput!): UserOutput!
   deleteArtist(id: String!): MessageDeleteOutput!
   deleteUser(id: String!): MessageDeleteOutput!
