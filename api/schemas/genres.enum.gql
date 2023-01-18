@@ -1,0 +1,10 @@
+enum GenresEnum {
+	BLUES
+	ROCK
+	POP
+	PSYCHODELIC_ROCK
+	JAZZ
+	FUNK
+	DANCE
+	DISCO
+}

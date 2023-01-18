@@ -5,8 +5,6 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "nodemon dist/index.js",
-		"json-server": "npx json-server --watch src/data/data.json",
-		"dev:js": "nodemon -e js,graphql src/index.js",
 		"dev": "tsnd --respawn --transpile-only api/index.ts"
 	},
 	"repository": {
@@ -21,18 +19,29 @@
 	},
 	"homepage": "https://github.com/andrade-bruno/discography-graphql#readme",
 	"dependencies": {
+		"@types/pg": "^8.6.6",
+		"@types/uuid": "^9.0.0",
 		"apollo-datasource-rest": "^3.7.0",
 		"apollo-server": "^3.11.1",
 		"class-validator": "^0.14.0",
 		"cors": "^2.8.5",
 		"dotenv": "^16.0.3",
 		"graphql": "^15.8.0",
+		"mysql2": "^3.0.1",
+		"path": "^0.12.7",
+		"pg": "^8.8.0",
+		"pg-hstore": "^2.3.4",
 		"reflect-metadata": "^0.1.13",
-		"type-graphql": "^1.1.1"
+		"sequelize": "^6.28.0",
+		"sequelize-typescript": "^2.1.5",
+		"type-graphql": "^1.1.1",
+		"uuid": "^9.0.0"
 	},
 	"devDependencies": {
+		"@types/node": "^18.11.18",
 		"json-server": "^0.16.1",
 		"nodemon": "^2.0.20",
+		"sequelize-cli": "6.3.0",
 		"ts-node-dev": "^2.0.0",
 		"typescript": "^4.9.4"
 	}
